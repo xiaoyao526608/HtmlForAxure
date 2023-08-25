@@ -35,14 +35,14 @@
 			type: 'column',
 			options3d: {
 				enabled: true,
-				alpha: 25,
-				beta: 45,
-				depth: 630, // Set deph
-				viewDistance: 5,
+				alpha: 32,//α角度
+				beta: 18,//β角度
+				depth: 625, // 向里的距离，底盘大小
+				viewDistance: 0,//视距
 				frame: {
 					bottom: {
-						size: 5,
-						color: 'rgba(0,0,0,0.05)'
+						size: 15,
+						color: 'rgba(107,138,187,0.22)'
 					}
 				}
 			}
@@ -51,54 +51,56 @@
 			text: '不良位置累计统计'
 		},
 		subtitle: {
-			text: ''
+			text: '(可拖动3D旋转)'
 		},
 		yAxis: {
 			min: 0,
-			max: 100 //纵坐标最大值
+			max: 100, //纵坐标最大值
+			title: ''
 		},
 		xAxis: {
 			min: 1, // Set min on xAxis
 			max: 24,
-			gridLineWidth: 10
+			gridLineWidth: 1
 		},
 		zAxis: {
 			min: 0,
 			max: 5,
 			categories: ['A','B', 'C', 'D', 'E', 'F'],
 			labels: {
-				y: 20,
-				rotation: 30
+				y: 40,
+				x: 75,
+				rotation: 8
 			}
 		},
 		plotOptions: {
 			series: {
-				groupZPadding: 10,
-				depth: 100,
-				groupPadding: 0,
+				groupZPadding: 75,//柱状图Z轴间隔
+				depth: 28,//柱状图Z轴宽度
+				groupPadding: 0.28,
 				grouping: false,
 			}
 		},
 		series: [{
 			stack: 0,
 			name: 'A', //图例名称
-			data: [...Array(25)].map((v, i) => ({ x: i, y: rand(0, 50) }))
+			data: [...Array(25)].map((v, i) => ({ x: i, y: rand(0, 30) }))
 		}, {
 			stack: 1,
 			name: 'B',
-			data: [...Array(25)].map((v, i) => ({ x: i, y: rand(0, 60) }))
+			data: [...Array(25)].map((v, i) => ({ x: i, y: rand(0, 45) }))
 		}, {
 			stack: 2,
 			name: 'C',
-			data: [...Array(25)].map((v, i) => ({ x: i, y: rand(0, 70) }))
+			data: [...Array(25)].map((v, i) => ({ x: i, y: rand(0, 60) }))
 		},{
 			stack: 3,
 			name: 'D',
-			data: [...Array(25)].map((v, i) => ({ x: i, y: rand(0, 80) }))
+			data: [...Array(25)].map((v, i) => ({ x: i, y: rand(0, 75) }))
 		},{
 			stack: 4,
 			name: 'E',
-			data: [...Array(25)].map((v, i) => ({ x: i, y: rand(0, 90) }))
+			data: [...Array(25)].map((v, i) => ({ x: i, y: rand(0, 85) }))
 		},{
 			stack: 5,
 			name: 'F',
