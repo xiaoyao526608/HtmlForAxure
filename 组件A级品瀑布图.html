@@ -22,7 +22,7 @@
 		type: 'waterfall'
 	},
 	title: {
-		text: '组件A级品瀑布图'
+		text: '多次A级品瀑布图'
 	},
 	xAxis: {
 		type: 'category'
@@ -43,25 +43,28 @@
 		color: Highcharts.getOptions().colors[3],
 		data: [{
 			name: '一次A级',
-			y: 8201
+			y: 45845
 		}, {
 			name: '二次A级',
-			y: 9822
+			y: 6210
 		}, {
 			name: '三次A级',
-			y: 13771
+			y: 4595
 		},{
-			name: '三次以上A级',
-			y: 16175
-		}, {
-			name: '最终A级(合计)',
+			name: '四次A级',
+			y: 2562
+		},{
+			name: '五次及以上A级',
+			y: 1142
+		},{
+			name: '最终A级',
 			isIntermediateSum: true,
 			color: Highcharts.getOptions().colors[1]
 		}],
 		dataLabels: {
 			enabled: true,
 			formatter: function () {
-				return Highcharts.numberFormat(this.y / 1, 0, ',') + '块<br/>'+Highcharts.numberFormat(this.y / 47969*100, 2, ',') + '%';
+				return Highcharts.numberFormat(this.y / 1, 0, ',') + '块<br/>'+Highcharts.numberFormat(this.y / 60354 * 100, 2, '.') + '%';
 			},
 			style: {
 				color: '#FFFFFF',
